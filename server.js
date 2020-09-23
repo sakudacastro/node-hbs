@@ -3,6 +3,7 @@ const hbs = require('hbs');
 require('./hbs/helpers/helpers');
 const app = express();
 
+const port = process.env.PORT || 8989;
 
 app.use(express.static(__dirname + '/public'));
 
@@ -29,6 +30,6 @@ app.get('/about', (req, res) => {
 
 });
 
-app.listen(8989, () => {
-    console.log('Listen in 8989');
+app.listen(port, () => {
+    console.log(`Listen on ${port}`);
 });
